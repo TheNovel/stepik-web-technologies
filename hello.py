@@ -1,6 +1,4 @@
 def app(env, start_response):
-	body = []
-	for elem in environ['QUERY_STRING'].split('&'):
-		body += [elem]
+	body = environ['QUERY_STRING'].split('&')
     start_response('200 OK', [('Content-Type', 'text/plain')])
     return body
